@@ -93,10 +93,7 @@ const About = () => {
               <div className="qual-icon">🎓</div>
               <h3>Education</h3>
               <ul>
-                <li>PhD in Organic Chemistry - University of Cambridge</li>
-                <li>MSc in Science Education - University of Oxford</li>
-                <li>BSc (Hons) Chemistry - Imperial College London</li>
-                <li>PGCE Secondary Science - King's College London</li>
+                <li>[Qualification] - [University or Institute]</li>
               </ul>
             </div>
 
@@ -104,10 +101,7 @@ const About = () => {
               <div className="qual-icon">🏆</div>
               <h3>Achievements</h3>
               <ul>
-                <li>Outstanding Teacher Award (2019, 2021)</li>
-                <li>Published researcher in science education</li>
-                <li>Exam board consultant for A-Level Chemistry</li>
-                <li>100% pass rate for A-Level students (2020-2023)</li>
+                <li>[Award] [Awarding Body]</li>
               </ul>
             </div>
 
