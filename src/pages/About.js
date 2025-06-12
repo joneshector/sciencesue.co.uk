@@ -33,12 +33,12 @@ const About = () => {
                   <div className="profile-placeholder">👩‍🔬</div>
                 </div>
                 <div className="profile-info">
-                  <h2>Dr. Susan Mitchell</h2>
+                  <h2>Science Sue</h2>
                   <p className="profile-title">Science Education Specialist</p>
                   <p className="profile-credentials">
-                    PhD in Chemistry, MSc in Education<br />
-                    Certified Science Teacher (QTS)<br />
-                    15+ Years Teaching Experience
+                    Certified Legend<br />
+                    Certified Science Teacher<br />
+                    20+ Years Teaching Experience
                   </p>
                 </div>
               </div>
