@@ -1,0 +1,377 @@
+/**
+ * About page styles
+ * Profile card, qualifications grid, and professional layout
+ */
+
+.about {
+  min-height: 100vh;
+  padding: 40px 0 80px;
+}
+
+/* Page Header */
+.about-header {
+  text-align: center;
+  padding: 60px 0;
+  background: linear-gradient(135deg, var(--background-cream) 0%, var(--background-white) 100%);
+}
+
+.about-header h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-dark);
+}
+
+.about-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-medium);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Main Content */
+.about-content {
+  padding: 80px 0;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* Profile Section */
+.profile-section {
+  position: sticky;
+  top: 100px;
+}
+
+.profile-card {
+  background: var(--background-white);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px var(--shadow);
+  border: 1px solid var(--border-light);
+  text-align: center;
+}
+
+.profile-image {
+  margin-bottom: 1.5rem;
+}
+
+.profile-placeholder {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--primary-light);
+  color: var(--background-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  margin: 0 auto;
+  border: 4px solid var(--background-white);
+  box-shadow: 0 4px 15px var(--shadow);
+}
+
+.profile-info h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-dark);
+}
+
+.profile-title {
+  font-size: 1.1rem;
+  color: var(--primary-medium);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.profile-credentials {
+  color: var(--text-medium);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* About Text Content */
+.about-text {
+  background: var(--background-white);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px var(--shadow);
+  border: 1px solid var(--border-light);
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-dark);
+}
+
+.about-text h3 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary-dark);
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+}
+
+.approach-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5rem;
+}
+
+.approach-list li {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-dark);
+}
+
+.approach-list li:last-child {
+  border-bottom: none;
+}
+
+.approach-list strong {
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+
+/* Qualifications Section */
+.qualifications {
+  padding: 80px 0;
+  background: var(--background-cream);
+}
+
+.qualifications h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--primary-dark);
+}
+
+.qualifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.qualification-card {
+  background: var(--background-white);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px var(--shadow);
+  border: 1px solid var(--border-light);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.qualification-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(45, 80, 22, 0.15);
+}
+
+.qual-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+}
+
+.qualification-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-dark);
+}
+
+.qualification-card ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.qualification-card li {
+  padding: 0.5rem 0;
+  color: var(--text-medium);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.qualification-card li:last-child {
+  border-bottom: none;
+}
+
+/* About CTA */
+.about-cta {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.cta-box {
+  background: var(--primary-dark);
+  color: var(--background-white);
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta-box h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: var(--background-white);
+}
+
+.cta-box p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Button Styles */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.btn-primary {
+  background-color: var(--primary-medium);
+  color: var(--background-white);
+  border-color: var(--primary-medium);
+}
+
+.btn-primary:hover {
+  background-color: var(--background-white);
+  color: var(--primary-dark);
+  border-color: var(--background-white);
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-header {
+    padding: 40px 0;
+  }
+
+  .about-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .about-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .about-content {
+    padding: 60px 0;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .profile-section {
+    position: static;
+  }
+
+  .profile-card {
+    padding: 2rem;
+  }
+
+  .profile-placeholder {
+    width: 100px;
+    height: 100px;
+    font-size: 2.5rem;
+  }
+
+  .about-text {
+    padding: 2rem;
+  }
+
+  .about-text h2 {
+    font-size: 1.6rem;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+  }
+
+  .qualifications {
+    padding: 60px 0;
+  }
+
+  .qualifications h2 {
+    font-size: 2rem;
+  }
+
+  .qualifications-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .qualification-card {
+    padding: 2rem;
+  }
+
+  .cta-box {
+    padding: 2rem 1.5rem;
+  }
+
+  .cta-box h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .profile-card {
+    padding: 1.5rem;
+  }
+
+  .profile-placeholder {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+  }
+
+  .about-text {
+    padding: 1.5rem;
+  }
+
+  .qualification-card {
+    padding: 1.5rem;
+  }
+
+  .qual-icon {
+    font-size: 2.5rem;
+  }
+
+  .cta-box {
+    padding: 1.5rem;
+  }
+
+  .cta-box h2 {
+    font-size: 1.6rem;
+  }
+} 
