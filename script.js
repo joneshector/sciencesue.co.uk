@@ -30,6 +30,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add scroll event listener
     window.addEventListener('scroll', handleScroll);
     
+    // ===== CAROUSEL FUNCTIONALITY =====
+    initializeCarousel();
+    
     // ===== MOBILE MENU FUNCTIONALITY =====
     
     let isMenuOpen = false;
@@ -280,6 +283,156 @@ document.addEventListener('navigate', function(e) {
         showPage(pageId);
     }
 });
+
+/**
+ * Initialize carousel functionality with infinite loop
+ */
+function initializeCarousel() {
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(document.querySelectorAll('.carousel-slide'));
+    const prevButton = document.querySelector('.carousel-btn-prev');
+    const nextButton = document.querySelector('.carousel-btn-next');
+    const indicatorsContainer = document.querySelector('.carousel-indicators');
+    
+    if (!track || slides.length === 0) return;
+    
+    const totalSlides = slides.length;
+    let currentIndex = 1; // Start at 1 because we'll add a clone at the beginning
+    let isTransitioning = false;
+    
+    // Clone first and last slides for infinite loop
+    const firstClone = slides[0].cloneNode(true);
+    const lastClone = slides[totalSlides - 1].cloneNode(true);
+    
+    // Add clones
+    track.appendChild(firstClone);
+    track.insertBefore(lastClone, slides[0]);
+    
+    // Set initial position (show first real slide)
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    
+    // Create indicator dots (only for real slides)
+    slides.forEach((_, index) => {
+        const indicator = document.createElement('div');
+        indicator.classList.add('carousel-indicator');
+        if (index === 0) indicator.classList.add('active');
+        indicator.addEventListener('click', () => goToSlide(index + 1));
+        indicatorsContainer.appendChild(indicator);
+    });
+    
+    const indicators = Array.from(document.querySelectorAll('.carousel-indicator'));
+    
+    // Update carousel position
+    function updateCarousel(smooth = true) {
+        if (smooth) {
+            track.style.transition = 'transform 0.5s ease-in-out';
+        } else {
+            track.style.transition = 'none';
+        }
+        
+        const offset = -currentIndex * 100;
+        track.style.transform = `translateX(${offset}%)`;
+        
+        // Update indicators (map current index to real slide index)
+        const realIndex = currentIndex === 0 ? totalSlides - 1 : 
+                         currentIndex === totalSlides + 1 ? 0 : 
+                         currentIndex - 1;
+        
+        indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === realIndex);
+        });
+    }
+    
+    // Handle transition end for infinite loop
+    function handleTransitionEnd() {
+        isTransitioning = false;
+        
+        // If we're at the clone of the first slide, jump to the real first slide
+        if (currentIndex === 0) {
+            currentIndex = totalSlides;
+            updateCarousel(false);
+        }
+        
+        // If we're at the clone of the last slide, jump to the real last slide
+        if (currentIndex === totalSlides + 1) {
+            currentIndex = 1;
+            updateCarousel(false);
+        }
+    }
+    
+    track.addEventListener('transitionend', handleTransitionEnd);
+    
+    // Go to specific slide
+    function goToSlide(index) {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        currentIndex = index;
+        updateCarousel();
+    }
+    
+    // Next slide
+    function nextSlide() {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        currentIndex++;
+        updateCarousel();
+    }
+    
+    // Previous slide
+    function prevSlide() {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        currentIndex--;
+        updateCarousel();
+    }
+    
+    // Event listeners
+    nextButton.addEventListener('click', nextSlide);
+    prevButton.addEventListener('click', prevSlide);
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') prevSlide();
+        if (e.key === 'ArrowRight') nextSlide();
+    });
+    
+    // Auto-play (optional, every 5 seconds)
+    let autoplayInterval = setInterval(nextSlide, 5000);
+    
+    // Pause autoplay on hover
+    const carousel = document.querySelector('.gallery-carousel');
+    if (carousel) {
+        carousel.addEventListener('mouseenter', () => {
+            clearInterval(autoplayInterval);
+        });
+        
+        carousel.addEventListener('mouseleave', () => {
+            autoplayInterval = setInterval(nextSlide, 5000);
+        });
+    }
+    
+    // Touch/swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    track.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+    
+    track.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
+    
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        if (touchStartX - touchEndX > swipeThreshold) {
+            nextSlide();
+        } else if (touchEndX - touchStartX > swipeThreshold) {
+            prevSlide();
+        }
+    }
+}
 
 // Export functions for potential module use
 if (typeof module !== 'undefined' && module.exports) {
