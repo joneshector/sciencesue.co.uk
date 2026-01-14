@@ -936,69 +936,6 @@ a:hover {
   font-weight: 600;
 }
 
-.qualifications {
-  padding: 80px 0;
-  background: var(--background-cream);
-}
-
-.qualifications h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  color: var(--primary-dark);
-}
-
-.qualifications-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
-}
-
-.qualification-card {
-  background: var(--background-white);
-  padding: 2.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px var(--shadow);
-  border: 1px solid var(--border-light);
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.qualification-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(45, 80, 22, 0.15);
-}
-
-.qual-icon {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
-  display: inline-block;
-}
-
-.qualification-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  color: var(--primary-dark);
-}
-
-.qualification-card ul {
-  list-style: none;
-  padding: 0;
-  text-align: left;
-}
-
-.qualification-card li {
-  padding: 0.5rem 0;
-  color: var(--text-medium);
-  font-size: 0.95rem;
-  line-height: 1.5;
-  border-bottom: 1px solid var(--border-light);
-}
-
-.qualification-card li:last-child {
-  border-bottom: none;
-}
-
 .about-cta {
   padding: 80px 0;
   text-align: center;
@@ -1291,23 +1228,6 @@ a:hover {
   .about-text p {
     font-size: 1rem;
   }
-
-  .qualifications {
-    padding: 60px 0;
-  }
-
-  .qualifications h2 {
-    font-size: 2rem;
-  }
-
-  .qualifications-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .qualification-card {
-    padding: 2rem;
-  }
 }
 
 @media (max-width: 480px) {
@@ -1409,14 +1329,6 @@ a:hover {
 
   .about-text {
     padding: 1.5rem;
-  }
-
-  .qualification-card {
-    padding: 1.5rem;
-  }
-
-  .qual-icon {
-    font-size: 2.5rem;
   }
 
   .cta-box {
