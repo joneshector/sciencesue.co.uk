@@ -1,0 +1,251 @@
+/**
+ * pages.css — page-specific sections
+ * ---------------------------------------------------------------------------
+ * Hero, page headers, and the About/Contact layouts. Reusable widgets live
+ * in components.css; global foundations in base.css.
+ */
+
+/* ── Hero (home) ───────────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(90% 130% at 100% 0%, rgba(232, 163, 61, 0.14), transparent 60%),
+    radial-gradient(80% 120% at 0% 100%, rgba(30, 91, 69, 0.1), transparent 55%),
+    var(--clr-bg);
+  padding-block: var(--space-7);
+  text-align: center;
+}
+
+.hero__title {
+  font-size: var(--text-hero);
+  margin-bottom: var(--space-3);
+  animation: rise-in var(--dur-slow) var(--ease-out) both;
+}
+
+.hero__subtitle {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--text-lg);
+  color: var(--clr-accent-dark);
+  margin-bottom: var(--space-3);
+  animation: rise-in var(--dur-slow) var(--ease-out) 120ms both;
+}
+
+.hero__description {
+  max-width: 42rem;
+  margin: 0 auto var(--space-5);
+  color: var(--clr-ink-soft);
+  font-size: var(--text-lg);
+  animation: rise-in var(--dur-slow) var(--ease-out) 240ms both;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+  animation: rise-in var(--dur-slow) var(--ease-out) 360ms both;
+}
+
+/* Floating decorative science doodles (aria-hidden) */
+.hero__doodle {
+  position: absolute;
+  opacity: 0.16;
+  color: var(--clr-primary);
+  animation: floaty 7s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.hero__doodle--1 { top: 12%; left: 6%; width: 4.5rem; }
+.hero__doodle--2 { bottom: 14%; right: 7%; width: 5.5rem; animation-delay: 1.6s; }
+.hero__doodle--3 { top: 18%; right: 14%; width: 3.2rem; animation-delay: 3.1s; color: var(--clr-accent-dark); }
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(1.4rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-1.1rem) rotate(4deg); }
+}
+
+/* ── Page headers (inner pages) ────────────────────────────────────────── */
+.page-header {
+  text-align: center;
+  padding-block: var(--space-6) var(--space-5);
+  background:
+    radial-gradient(100% 160% at 50% -30%, rgba(30, 91, 69, 0.09), transparent 65%),
+    var(--clr-bg);
+}
+
+.page-header h1 {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-3);
+  animation: rise-in var(--dur-slow) var(--ease-out) both;
+}
+
+.page-header p {
+  max-width: 44rem;
+  margin-inline: auto;
+  color: var(--clr-ink-soft);
+  font-size: var(--text-lg);
+  animation: rise-in var(--dur-slow) var(--ease-out) 120ms both;
+}
+
+/* ── About page ────────────────────────────────────────────────────────── */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: var(--space-5);
+  align-items: start;
+}
+
+.profile-card {
+  position: sticky;
+  top: 6rem;
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+
+.profile-card img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: top;
+}
+
+.profile-card__body {
+  padding: var(--space-4);
+}
+
+.profile-card__title {
+  color: var(--clr-accent-dark);
+  font-weight: 700;
+  margin-block: var(--space-1) var(--space-2);
+}
+
+.profile-card__credentials {
+  font-size: var(--text-sm);
+  color: var(--clr-ink-soft);
+}
+
+.about-text h2 {
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-3);
+}
+
+.about-text h3 {
+  font-size: var(--text-lg);
+  margin-block: var(--space-4) var(--space-3);
+}
+
+.about-text p {
+  margin-bottom: var(--space-3);
+  color: var(--clr-ink-soft);
+}
+
+.approach-list {
+  list-style: none;
+  display: grid;
+  gap: var(--space-3);
+}
+
+.approach-list li {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-line);
+  border-left: 4px solid var(--clr-accent);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--dur-med) var(--ease-out), box-shadow var(--dur-med) var(--ease-out);
+}
+
+.approach-list li:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-md);
+}
+
+.approach-list strong {
+  color: var(--clr-primary-dark);
+}
+
+@media (max-width: 63.9rem) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-card {
+    position: static;
+    max-width: 24rem;
+    margin-inline: auto;
+  }
+}
+
+/* ── Contact page ──────────────────────────────────────────────────────── */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: var(--space-5);
+  align-items: start;
+}
+
+.contact-info,
+.contact-form-panel {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-line);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-info h2,
+.contact-form-panel h2 {
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-4);
+}
+
+.info-item {
+  display: flex;
+  gap: var(--space-3);
+  padding-block: var(--space-3);
+}
+
+.info-item + .info-item {
+  border-top: 1px solid var(--clr-line);
+}
+
+.info-item__icon {
+  font-size: 1.6rem;
+  line-height: 1;
+  flex: none;
+}
+
+.info-item h3 {
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  font-weight: 800;
+  margin-bottom: var(--space-1);
+}
+
+.info-item p {
+  color: var(--clr-ink-soft);
+  font-size: var(--text-sm);
+}
+
+@media (max-width: 63.9rem) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}

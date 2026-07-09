@@ -1,0 +1,63 @@
+/**
+ * tokens.css — design tokens (single source of visual truth)
+ * ---------------------------------------------------------------------------
+ * Every colour, font, radius, shadow and motion curve used on the site is
+ * defined here. Change a token to re-theme the whole site consistently.
+ * The React app (/app) mirrors these tokens in src/styles/tokens.css.
+ */
+
+:root {
+  /* ── Colour: warm, credible, primary-science ─────────────────────────── */
+  --clr-primary:        #1e5b45;  /* deep pine green — brand core          */
+  --clr-primary-dark:   #143d2e;
+  --clr-primary-soft:   #e7f1ec;  /* tinted section backgrounds            */
+  --clr-accent:         #e8a33d;  /* warm amber — highlights, stars, CTAs  */
+  --clr-accent-dark:    #c9861f;
+  --clr-accent-soft:    #fdf3e3;
+
+  --clr-ink:            #24313a;  /* primary text                          */
+  --clr-ink-soft:       #56656f;  /* secondary text                        */
+  --clr-bg:             #fbf9f4;  /* warm off-white page background        */
+  --clr-surface:        #ffffff;  /* cards, panels                         */
+  --clr-line:           #e6e2d8;  /* hairline borders                      */
+
+  --clr-focus:          #2f7ddb;  /* keyboard focus ring                   */
+
+  /* ── Typography ──────────────────────────────────────────────────────── */
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body: 'Nunito Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
+
+  --text-xs: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-md: 1.0625rem;
+  --text-lg: 1.25rem;
+  --text-xl: clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
+  --text-2xl: clamp(1.9rem, 1.4rem + 2vw, 2.75rem);
+  --text-hero: clamp(2.3rem, 1.6rem + 3.2vw, 3.9rem);
+
+  /* ── Spacing & layout ────────────────────────────────────────────────── */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2.5rem;
+  --space-6: 4rem;
+  --space-7: 6rem;
+
+  --container: 72rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.875rem;
+  --radius-lg: 1.25rem;
+  --radius-pill: 999px;
+
+  /* ── Elevation ───────────────────────────────────────────────────────── */
+  --shadow-sm: 0 1px 3px rgba(36, 49, 58, 0.08);
+  --shadow-md: 0 6px 20px rgba(36, 49, 58, 0.09);
+  --shadow-lg: 0 18px 44px rgba(20, 61, 46, 0.16);
+
+  /* ── Motion ──────────────────────────────────────────────────────────── */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 180ms;
+  --dur-med: 380ms;
+  --dur-slow: 650ms;
+}

@@ -1,134 +1,68 @@
-# Science Sue Website
+# sciencesue.co.uk
 
-A professional React web application for Science Sue's educational services, featuring a responsive design with a green color scheme and educational typography.
+Professional website for **Sue Dudman Jones ("Science Sue")** — a primary-education science specialist with 35+ years of experience. The site introduces Sue, presents her educational approach, showcases testimonials, and converts interest into enquiries for future tutoring services (individual tutoring, group sessions, exam preparation, online learning).
 
-## Features
+> This is an informational/presentational site — **no e-commerce or checkout** is included by design.
 
-- **Responsive Design**: Fully responsive layout that works on desktop, tablet, and mobile devices
-- **Professional Navigation**: Fixed navbar with smooth scrolling and mobile hamburger menu
-- **Modern UI**: Clean, professional design with green color scheme suitable for educational content
-- **Educational Typography**: Professional fonts (Crimson Text for headings, Source Sans Pro for body text)
-- **Interactive Components**: Contact forms, testimonial cards, and call-to-action sections
+## Two implementations, one design
 
-## Pages
+| | Where | Purpose |
+|---|---|---|
+| **Static site** | repo root (`*.html`, `assets/`) | Zero-build deployment on **GitHub Pages** (live at www.sciencesue.co.uk). This is what visitors see today. |
+| **React app** | [`app/`](app/) | The **extendable codebase** for the future business — same look and feel, componentised with Vite + React, ready for booking flows, a blog, a CMS, etc. |
 
-- **Home**: Landing page with hero section, features, and call-to-action
-- **Reviews**: Student and parent testimonials with star ratings
-- **Contact**: Contact form and professional information
-- **About**: Professional profile, qualifications, and educational philosophy
+Both share the same **design tokens** (`assets/css/tokens.css` ↔ `app/src/styles/tokens.css`) and the same **content data** (`assets/js/data/` ↔ `app/src/data/`), so they stay visually and factually identical.
 
-## Technology Stack
+## Quick start
 
-- React 18.2.0
-- React Router DOM 6.8.0
-- CSS3 with CSS Variables
-- Google Fonts (Crimson Text, Source Sans Pro)
-- Responsive Grid and Flexbox layouts
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js (version 14 or higher)
-- npm or yarn package manager
-
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   cd sciencesue.co.uk
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Start the development server:
-   ```bash
-   npm start
-   ```
-
-4. Open your browser and navigate to `http://localhost:3000`
-
-### Building for Production
-
-To create a production build:
+**Static site** — no build step:
 
 ```bash
-npm run build
+# any static server, e.g.
+python3 -m http.server 8000
+# → http://localhost:8000
 ```
 
-The built files will be in the `build/` directory.
+**React app:**
 
-## Project Structure
-
-```
-src/
-├── components/
-│   ├── Navbar.js          # Navigation component
-│   └── Navbar.css         # Navigation styles
-├── pages/
-│   ├── Home.js            # Home page component
-│   ├── Home.css           # Home page styles
-│   ├── Reviews.js         # Reviews page component
-│   ├── Reviews.css        # Reviews page styles
-│   ├── Contact.js         # Contact page component
-│   ├── Contact.css        # Contact page styles
-│   ├── About.js           # About page component
-│   └── About.css          # About page styles
-├── App.js                 # Main app component
-├── App.css                # App-level styles
-├── index.js               # Entry point
-└── index.css              # Global styles
+```bash
+cd app
+npm install
+npm run dev      # dev server → http://localhost:5173
+npm run build    # production bundle → app/dist/
 ```
 
-## Color Scheme
+## Repository structure
 
-The website uses a professional green color palette:
+```
+├── index.html / about.html / reviews.html / contact.html   Static pages
+├── 404.html, robots.txt, sitemap.xml, CNAME                SEO & hosting files
+├── assets/
+│   ├── css/        Design system (tokens → base → components → pages)
+│   └── js/         Behaviour modules + data/ (reviews & site content)
+├── images/         Sue's photo gallery (16 images)
+├── app/            Vite + React extendable implementation
+└── docs/           Architecture, deployment, scaling & content guides
+```
 
-- **Primary Dark**: #2d5016 (Deep forest green)
-- **Primary Medium**: #4a7c59 (Medium green)
-- **Primary Light**: #7fb069 (Light green)
-- **Accent Light**: #a7c957 (Light accent green)
-- **Background White**: #ffffff (Pure white)
-- **Background Cream**: #f8f9fa (Light cream)
+Each directory has its own README. Start with [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 
-## Typography
+## Content rules (important)
 
-- **Headings**: Crimson Text (serif) - Professional academic font
-- **Body Text**: Source Sans Pro (sans-serif) - Clean, readable font
-- **Responsive**: Font sizes adjust based on screen size
+- **Reviews are sacrosanct.** All 36 testimonials in `assets/js/data/reviews.data.js` are client-supplied and must never be reworded, added to, or removed. Only their presentation may change.
+- **Existing copy is client-approved.** Bio, philosophy, approach, services and contact details must keep their wording. Suggested copy improvements belong in [`docs/SUGGESTIONS.md`](docs/SUGGESTIONS.md), not in the code.
+- Fixed content counts: **36 reviews, 16 gallery images, 3 approach cards, 4 contact info items, 4 services.**
 
-## Responsive Breakpoints
+## Documentation index
 
-- **Desktop**: 1024px and above
-- **Tablet**: 768px - 1023px
-- **Mobile**: Below 768px
-- **Small Mobile**: Below 480px
-
-## Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
+| Doc | Covers |
+|---|---|
+| [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) | How the pieces fit together; design decisions (incl. the reviews pattern) |
+| [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) | GitHub Pages today; porting to a DigitalOcean Droplet / any host |
+| [`docs/SCALING.md`](docs/SCALING.md) | Growth roadmap: CMS for non-technical editing, booking, blog, analytics; admin-panel decision |
+| [`docs/CONTENT.md`](docs/CONTENT.md) | How to edit/add content safely (data-driven structure) |
+| [`docs/SUGGESTIONS.md`](docs/SUGGESTIONS.md) | Prioritised future enhancements + proposed copy edits for client sign-off |
 
 ## License
 
-This project is licensed under the MIT License.
-
-## Contact
-
-For questions about this website, please contact:
-- Email: sue@sciencesue.co.uk
-- Phone: +44 (0) 123 456 7890
+Code is released under the [MIT License](LICENSE). Site content (text, testimonials, photographs) is **not** MIT-licensed — see the content notice in [LICENSE](LICENSE).

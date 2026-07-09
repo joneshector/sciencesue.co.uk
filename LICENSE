@@ -1,0 +1,35 @@
+MIT License
+
+Copyright (c) 2026 Sue Dudman Jones ("Science Sue") and contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---------------------------------------------------------------------------
+CONTENT NOTICE (not part of the MIT License above)
+
+The MIT License applies to the SOURCE CODE in this repository only.
+
+All site CONTENT — including the testimonials/reviews, biographical text,
+photographs and the "Science Sue" name — is the property of Sue Dudman Jones
+(or the respective testimonial authors) and is NOT licensed for reuse,
+redistribution or modification. All rights reserved.
+
+CLIENT DECISION FLAGGED: if the client prefers the code to remain
+proprietary rather than open source, replace the MIT text above with an
+"All rights reserved" notice. See docs/SUGGESTIONS.md.

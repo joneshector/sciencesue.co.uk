@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#1e5b45">
+
+    <title>Contact — Science Sue</title>
+    <meta name="description" content="Get in touch with Science Sue about individual tutoring, group sessions, exam preparation and online learning. Email sue@sciencesue.co.uk or send a message.">
+    <link rel="canonical" href="https://www.sciencesue.co.uk/contact.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Science Sue">
+    <meta property="og:title" content="Contact — Science Sue">
+    <meta property="og:description" content="Get in touch about individual tutoring, group sessions, exam preparation and online learning.">
+    <meta property="og:url" content="https://www.sciencesue.co.uk/contact.html">
+    <meta property="og:image" content="https://www.sciencesue.co.uk/images/sue_image_1.jpeg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,500&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="assets/css/tokens.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/pages.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contact Science Sue",
+      "url": "https://www.sciencesue.co.uk/contact.html"
+    }
+    </script>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="container site-header__inner">
+            <a href="index.html" class="brand" aria-label="Science Sue — home">
+                <img class="brand__mark" src="favicon.svg" alt="" width="38" height="38">
+                <span>
+                    <span class="brand__name">Science Sue</span>
+                    <span class="brand__tag">Educational Excellence</span>
+                </span>
+            </a>
+            <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="reviews.html">Reviews</a>
+                <a href="contact.html" aria-current="page">Contact</a>
+                <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <!-- ================= Page header ================= -->
+        <div class="page-header">
+            <div class="container">
+                <h1>Get In Touch</h1>
+                <p>
+                    Ready to begin your educational journey? We'd love to hear from you.
+                    Contact us today to discuss how we can help you achieve your academic goals.
+                </p>
+            </div>
+        </div>
+
+        <!-- ================= Contact info + form ================= -->
+        <section class="section" aria-label="Contact details and enquiry form">
+            <div class="container contact-grid">
+                <div class="contact-info reveal">
+                    <h2>Contact Information</h2>
+
+                    <div class="info-item">
+                        <span class="info-item__icon" aria-hidden="true">📧</span>
+                        <div>
+                            <h3>Email</h3>
+                            <p><a href="mailto:sue@sciencesue.co.uk">sue@sciencesue.co.uk</a></p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="info-item__icon" aria-hidden="true">📱</span>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+44 (0) 123 456 7890</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="info-item__icon" aria-hidden="true">🕒</span>
+                        <div>
+                            <h3>Hours</h3>
+                            <p>Monday - Friday: 9:00 AM - 6:00 PM<br>
+                               Saturday: 10:00 AM - 4:00 PM<br>
+                               Sunday: Closed</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="info-item__icon" aria-hidden="true">🎓</span>
+                        <div>
+                            <h3>Services</h3>
+                            <p>Individual Tutoring<br>
+                               Group Sessions<br>
+                               Exam Preparation<br>
+                               Online Learning</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-panel reveal">
+                    <h2>Send Us a Message</h2>
+                    <!-- Mock form: opens the visitor's email client pre-filled.
+                         Upgrade path to a real backend: docs/SCALING.md -->
+                    <form class="form-grid" id="contact-form" novalidate>
+                        <div class="form-field">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" autocomplete="name" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" autocomplete="email" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" autocomplete="tel">
+                        </div>
+                        <div class="form-field">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="Individual Tutoring">Individual Tutoring</option>
+                                <option value="Group Sessions">Group Sessions</option>
+                                <option value="Exam Preparation">Exam Preparation</option>
+                                <option value="Online Learning">Online Learning</option>
+                                <option value="Other Inquiry">Other Inquiry</option>
+                            </select>
+                        </div>
+                        <div class="form-field form-field--full">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="6"
+                                      placeholder="Please tell us about your educational goals and how we can help..."
+                                      required></textarea>
+                        </div>
+                        <div class="form-field--full">
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                            <p class="form-status" role="status" aria-live="polite"></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="site-footer__grid">
+                <div class="site-footer__brand">
+                    <span class="brand__name">Science Sue</span>
+                    <span class="brand__tag">Educational Excellence</span>
+                    <p>
+                        Providing high-quality educational services with a focus on education leadership,
+                        curriculum development, and academic achievement.
+                    </p>
+                </div>
+                <nav aria-label="Footer navigation">
+                    <h2>Explore</h2>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <div>
+                    <h2>Get in Touch</h2>
+                    <ul>
+                        <li><a href="mailto:sue@sciencesue.co.uk">sue@sciencesue.co.uk</a></li>
+                        <li><a href="tel:+441234567890">+44 (0) 123 456 7890</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="site-footer__bottom">
+                <span>&copy; <span data-year>2026</span> Science Sue — Sue Dudman Jones. All rights reserved.</span>
+                <span><a href="sitemap.xml">Sitemap</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/contact.js"></script>
+</body>
+</html>
